@@ -1,6 +1,6 @@
 class Lancamento {
     constructor (categoria, tipo, valor){
-        if(categoria === "") {
+        if(categoria === "" || categoria === undefined) {
             throw new Error("Lançamento Inválido: categoria precisa ter uma descrição.");
         }
         if(tipo !== "receita" && tipo !== "despesa"){
