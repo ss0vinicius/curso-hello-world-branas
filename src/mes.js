@@ -61,7 +61,8 @@ class Mes{
     }
 
     calcularRendimentos () {
-        this.totalizador.rendimentos = arredondar(this.totalizador.saldo * 0.005);
+        const porcentagemRendimento = (0.5/100);
+        this.totalizador.rendimentos = arredondar(this.totalizador.saldo * porcentagemRendimento);
     }
 
     apurarDespesas(){
@@ -92,6 +93,7 @@ class Mes{
     }
 
     calcularJuros () {
-        this.totalizador.juros = arredondar(this.totalizador.saldo * 0.1);
+        const porcentagemJuros = (10/100);
+        this.totalizador.juros = arredondar(this.totalizador.saldo * porcentagemJuros);
     }
 }
