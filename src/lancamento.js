@@ -13,4 +13,15 @@ class Lancamento {
         this.tipo = tipo;
         this.valor = valor;
     }
+
+    getValorString(){
+        // if(this.tipo === "despesa"){
+        //     return this.valor * -1;
+        // }else{
+        //     return this.valor;
+        // }
+        //operador ternário
+        //código de cima é equivalente ao de baixo
+        return (this.tipo === "despesa") ? this.valor * -1 : this.valor;
+    }
 }
