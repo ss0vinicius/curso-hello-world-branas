@@ -1,6 +1,7 @@
 class Ano{
     constructor(){
         this.meses = [];
+        this.maiorSaldoDoAno = 0;
     }
 
     adicionarMes(mes){
@@ -22,6 +23,14 @@ class Ano{
             mes.saldoInicial = saldoInicial;
             mes.calcularSaldo();
             saldoInicial = mes.totalizador.saldo;
+        }
+    }
+    
+    maiorSaldo(){
+        for (const mes of this.meses){
+            if(this.maiorSaldoDoAno < mes.totalizador.saldo){
+                this.maiorSaldoDoAno = mes.totalizador.saldo;
+            }
         }
     }
 }
