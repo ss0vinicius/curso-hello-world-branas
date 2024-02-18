@@ -16,7 +16,7 @@
 
 ## Documentação javascript: https://devdocs.io/javascript/	
 
-### Application Programming Interface - API
+#### Application Programming Interface - API
 
 ### Graphic User Interface - GUI
 
