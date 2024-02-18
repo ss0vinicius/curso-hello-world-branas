@@ -1,5 +1,5 @@
-Rodrigo Branas' code from 
-Aula 1: variáveis, operadores e if/else: https://github.com/rodrigobranas/hello-world/tree/master/1
+Rodrigo Branas' code from: 
+Aula 1: variáveis, operadores e if/else: https://github.com/rodrigobranas/hello-world/tree/master/1;
 Aula 2: funções, parâmetros e retorno: https://github.com/rodrigobranas/hello-world/tree/master/2
 Aula 3: arrays, objetos e for: https://github.com/rodrigobranas/hello-world/tree/master/3
 Aula 4: classes, construtores e exceptions: https://github.com/rodrigobranas/hello-world/tree/master/4
