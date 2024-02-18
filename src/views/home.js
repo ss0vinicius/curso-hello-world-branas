@@ -45,6 +45,7 @@ class Home{
         ano.calcularSaldo();
 
         this.ano = ano;
+        this.app;
     }
 
     adicionarLancamento(){
@@ -60,12 +61,15 @@ class Home{
         categoria.value = "";
         valor.value = "";
     }
-    
-    renderizar(){
+
+    criaTela(){
         document.getElementById("app").remove();
-        const app = new Div("app");
+        this.app = new Div("app");
         const titulo = new H3("Finanças Pessoais");
-        app.adicionarElementoFilho(titulo.element);
+        this.app.adicionarElementoFilho(titulo.element);
+    }
+    
+    criaForms(){
         const form = new Div("form-lancamento");
         const boxMes = new Div("","data-in");
         boxMes.element.innerText = "Selecione o mês: "
@@ -91,18 +95,22 @@ class Home{
         form.adicionarElementoFilho(categoriaInputText.element);
         form.adicionarElementoFilho(valorInputNumber.element);
         form.adicionarElementoFilho(adicionarButton.element);
-        app.adicionarElementoFilho(form.element);
-        
+        this.app.adicionarElementoFilho(form.element);
+    }
+
+    criaGrafico(){
         const grafico = new Grafico();
         this.ano.maiorSaldo();
         for(const mes of this.ano.meses){
             grafico.adicionarColuna(mes.totalizador.saldo, this.ano.maiorSaldoDoAno, mes.nome);    
         }
-        app.adicionarElementoFilho(grafico.element);
-    
+        this.app.adicionarElementoFilho(grafico.element);
+    }
+
+    criaTabela(){
         for (const mes of this.ano.meses){
             const nomeDoMes = new H4(mes.nome);
-            app.adicionarElementoFilho(nomeDoMes.element);
+            this.app.adicionarElementoFilho(nomeDoMes.element);
             const tabelaLancamentos = new Table("tabela-lancamentos");
             tabelaLancamentos.addRow("th",["Categoria","Valor"]);
             for (const lancamento of mes.lancamentos){
@@ -119,10 +127,16 @@ class Home{
             const valorSaldo = new Span("valorSaldo");
             valorSaldo.adicionarCor(mes.totalizador.saldo);
             tabelaLancamentos.addRow("th", ["Saldo", valorSaldo.element]);
-            app.adicionarElementoFilho(tabelaLancamentos.element);   
+            this.app.adicionarElementoFilho(tabelaLancamentos.element);   
         }  
-        const [body] = document.getElementsByTagName("body");  //pega o primeiro elemento do body -> destructuring assigment
-        body.appendChild(app.element);
     }
-    
+
+    renderizar(){
+        this.criaTela();
+        this.criaForms();
+        this.criaGrafico();
+        this.criaTabela();    
+        const [body] = document.getElementsByTagName("body");  //pega o primeiro elemento do body -> destructuring assigment
+        body.appendChild(this.app.element);
+    }    
 }
