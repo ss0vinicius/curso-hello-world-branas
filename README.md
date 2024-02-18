@@ -1,4 +1,6 @@
-Rodrigo Branas' code from: 
+# Curso do Rodrigo Branas de introdução a programação WEB
+
+## Rodrigo Branas' code from: 
 - Aula 1: variáveis, operadores e if/else: https://github.com/rodrigobranas/hello-world/tree/master/1
 - Aula 2: funções, parâmetros e retorno: https://github.com/rodrigobranas/hello-world/tree/master/2
 - Aula 3: arrays, objetos e for: https://github.com/rodrigobranas/hello-world/tree/master/3
@@ -12,15 +14,17 @@ Rodrigo Branas' code from:
 - Aula 11: Definindo camadas e responsabilidades no backend: https://github.com/rodrigobranas/hello-world/tree/master/11
 - Aula 12: Encerramento e Próximos Passos: https://github.com/rodrigobranas/hello-world/tree/master/12
 
-Documentação javascript: https://devdocs.io/javascript/	
+## Documentação javascript: https://devdocs.io/javascript/	
 
-Application Programming Interface - API
-Graphic User Interface - GUI
-Document Object Model - DOM 
+#### Application Programming Interface - API
+
+#### Graphic User Interface - GUI
+
+#### Document Object Model - DOM 
 
 
 
-Melhorias:
+## Melhorias:
 - verificar se o mês existe, senão cria um mês novo
 - validar se o mês é algum mês de verdade ou se a pessoa escreveu errado (quando criar o mês, validar com a Classe)
 - selecionar ano e mês
