@@ -18,9 +18,9 @@
 
 #### Application Programming Interface - API
 
-### Graphic User Interface - GUI
+#### Graphic User Interface - GUI
 
-### Document Object Model - DOM 
+#### Document Object Model - DOM 
 
 
 
