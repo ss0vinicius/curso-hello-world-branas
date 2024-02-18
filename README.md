@@ -21,6 +21,9 @@ Document Object Model - DOM
 
 
 Melhorias:
-verificar se o mês existe, senão cria um mês novo
-validar se o mês é algum mês de verdade ou se a pessoa escreveu errado (quando criar o mês, validar com a Classe)
-usar input para mês e tipo, para não escrever errado
+- verificar se o mês existe, senão cria um mês novo
+- validar se o mês é algum mês de verdade ou se a pessoa escreveu errado (quando criar o mês, validar com a Classe)
+- selecionar ano e mês
+- usar calendário para selecionar o mês e ano
+- fazer saldo negativo no mês no gráfico (crescer para baixo)
+- fazer gráfico de pizza
