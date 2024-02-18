@@ -15,7 +15,9 @@ Rodrigo Branas' code from:
 Documentação javascript: https://devdocs.io/javascript/	
 
 Application Programming Interface - API
+
 Graphic User Interface - GUI
+
 Document Object Model - DOM 
 
 
