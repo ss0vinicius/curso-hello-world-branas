@@ -1,0 +1,15 @@
+{
+  "name": "curso-hello-world-branas",
+  "version": "1.0.0",
+  "description": "- Aula 1: variáveis, operadores e if/else: https://github.com/rodrigobranas/hello-world/tree/master/1\r - Aula 2: funções, parâmetros e retorno: https://github.com/rodrigobranas/hello-world/tree/master/2\r - Aula 3: arrays, objetos e for: https://github.com/rodrigobranas/hello-world/tree/master/3\r - Aula 4: classes, construtores e exceptions: https://github.com/rodrigobranas/hello-world/tree/master/4\r - Aula 5: OO, métodos e encapsulamento: https://github.com/rodrigobranas/hello-world/tree/master/5\r - Aula 6: manipulando a DOM: https://github.com/rodrigobranas/hello-world/tree/master/6\r - Aula 7: estilizando elementos com CSS: https://github.com/rodrigobranas/hello-world/tree/master/7\r - Aula 8: Componentização: https://github.com/rodrigobranas/hello-world/tree/master/8\r - Aula 9: Frontend e Backend: https://github.com/rodrigobranas/hello-world/tree/master/9\r - Aula 10: Banco de Dados: https://github.com/rodrigobranas/hello-world/tree/master/10\r - Aula 11: Definindo camadas e responsabilidades no backend: https://github.com/rodrigobranas/hello-world/tree/master/11\r - Aula 12: Encerramento e Próximos Passos: https://github.com/rodrigobranas/hello-world/tree/master/12",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
