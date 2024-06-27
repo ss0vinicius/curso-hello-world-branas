@@ -1,51 +1,22 @@
 class Home{
     constructor(){
-        const janeiro = new Mes("janeiro");
-        janeiro.adicionarLancamento(new Lancamento("Salário","receita", 8000));
-        janeiro.adicionarLancamento(new Lancamento("Aluguel","despesa", 1000));
-        janeiro.adicionarLancamento(new Lancamento("Luz","despesa", 200));
-        janeiro.adicionarLancamento(new Lancamento("Água","despesa", 100));
-        janeiro.adicionarLancamento(new Lancamento("Internet", "despesa", 100));
-        janeiro.adicionarLancamento(new Lancamento("Transporte", "despesa", 300));
-        janeiro.adicionarLancamento(new Lancamento("Lazer", "despesa", 300));
-        janeiro.adicionarLancamento(new Lancamento("Alimentação","despesa", 500));
-        janeiro.adicionarLancamento(new Lancamento("Condomínio","despesa", 300));
-        janeiro.adicionarLancamento(new Lancamento("Farmácia", "despesa", 100));
-        janeiro.adicionarLancamento(new Lancamento("Escola","despesa",500));
-        const fevereiro = new Mes("fevereiro");
-        fevereiro.adicionarLancamento(new Lancamento("Salário", "receita",8000));
-        fevereiro.adicionarLancamento(new Lancamento("Aluguel", "despesa", 1200));
-        fevereiro.adicionarLancamento(new Lancamento("Luz", "despesa", 250));
-        fevereiro.adicionarLancamento(new Lancamento("Água", "despesa", 100));
-        fevereiro.adicionarLancamento(new Lancamento("Internet", "despesa", 100));
-        fevereiro.adicionarLancamento(new Lancamento("Transporte", "despesa", 500));
-        fevereiro.adicionarLancamento(new Lancamento("Alimentação", "despesa", 1000));
-        fevereiro.adicionarLancamento(new Lancamento("Condomínio", "despesa", 400));
-        const marco = new Mes("março");
-        marco.adicionarLancamento(new Lancamento("Salário", "receita", 6000)); 
-        marco.adicionarLancamento(new Lancamento("Aluguel", "despesa", 1200));
-        marco.adicionarLancamento(new Lancamento("Luz", "despesa", 200));
-        marco.adicionarLancamento(new Lancamento("Água", "despesa", 100)); 
-        marco.adicionarLancamento(new Lancamento("Internet", "despesa", 200)); 
-        marco.adicionarLancamento(new Lancamento("Transporte", "despesa", 500)); 
-        marco.adicionarLancamento(new Lancamento("Lazer", "despesa", 800));
-        marco.adicionarLancamento(new Lancamento("Alimentação", "despesa", 1000)); 
-        marco.adicionarLancamento(new Lancamento("Condomínio", "despesa", 400));
-        marco.adicionarLancamento(new Lancamento("Renda Extra", "receita", 2000)); 
-        marco.adicionarLancamento(new Lancamento("Aluguel", "despesa", 1200));
-        const abril = new Mes("abril");
-        abril.adicionarLancamento(new Lancamento("Salário", "receita", 6000)); 
-        abril.adicionarLancamento(new Lancamento("Aluguel", "despesa", 1200));
-        abril.adicionarLancamento(new Lancamento("Luz", "despesa", 200));
+        this.init();
+    }
+    
+    async init(){
+        const response = await fetch("http://localhost:3000/api/lancamentos");
+        const lancamentos = await response.json();
         const ano = new Ano();
-        ano.adicionarMes(janeiro);
-        ano.adicionarMes(fevereiro);
-        ano.adicionarMes(marco);
-        ano.adicionarMes(abril);
+        ano.adicionarMes(new Mes("janeiro"));
+        ano.adicionarMes(new Mes("fevereiro"));
+        ano.adicionarMes(new Mes("marco"));
+        ano.adicionarMes(new Mes("abril"));
+        for (const lancamento of lancamentos){
+            ano.adicionarLancamento(lancamento.mes, new Lancamento(lancamento.categoria, lancamento.tipo, lancamento.valor));
+        }
         ano.calcularSaldo();
-
         this.ano = ano;
-        this.app;
+        this.renderizar();
     }
 
     adicionarLancamento(){
@@ -54,6 +25,7 @@ class Home{
         const categoria = document.getElementById("categoria");
         const valor = document.getElementById("valor");
         this.ano.adicionarLancamento(mes.value, new Lancamento(categoria.value, tipo.value, parseFloat(valor.value)));
+        fetch("http://localhost:3000/api/lancamentos", {method: "post", headers: {"content-type": "application/json"}, body: JSON.stringify({mes: mes.value, categoria: categoria.value, tipo: tipo.value, valor: parseFloat(valor.value)})});
         this.ano.calcularSaldo();
         this.renderizar();
         mes.value = this.ano.meses[0].nome;
