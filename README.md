@@ -22,8 +22,9 @@
 
 #### Document Object Model - DOM 
 
-node.js version: 20.15.0
-
+- node.js version: 20.15.0
+- npm init -y --> gerar package.json
+- npm install express --> instala o express e adiciona no package.json as informações
 
 ## Melhorias:
 - verificar se o mês existe, senão cria um mês novo
