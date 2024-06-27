@@ -22,6 +22,7 @@
 
 #### Document Object Model - DOM 
 
+node.js version: 20.15.0
 
 
 ## Melhorias:
