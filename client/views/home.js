@@ -12,7 +12,7 @@ class Home{
         ano.adicionarMes(new Mes("marco"));
         ano.adicionarMes(new Mes("abril"));
         for (const lancamento of lancamentos){
-            ano.adicionarLancamento(lancamento.mes, new Lancamento(lancamento.categoria, lancamento.tipo, lancamento.valor));
+            ano.adicionarLancamento(lancamento.mes, new Lancamento(lancamento.categoria, lancamento.tipo, parseFloat(lancamento.valor)));
         }
         ano.calcularSaldo();
         this.ano = ano;
